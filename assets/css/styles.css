@@ -493,14 +493,20 @@ button {
   margin-bottom: 2.4rem;
 }
 
-.blog-container {
-  margin-top: 3rem;
+.post-container {
+  margin-top: 1rem;
 }
 
 .blog-preview {
   display: flex;
   flex-direction: column;
   margin: 2rem 0;
+}
+
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .quotation {
@@ -576,7 +582,44 @@ button {
 }
 
 /* ================== WHERE TO BUY =====================*/
+.locale-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.locale-description {
+  margin-top: -0.6rem;
+  margin-left: 1rem;
+}
 
+.locale-info {
+  margin-top: 2rem;
+}
+
+.locale-info p {
+  color: var(--color-text);
+  padding: 0.4rem 0;
+  text-align: center;
+}
+
+.locale-info__socials {
+  display: inline-flex;
+}
+
+.locale-social {
+  cursor: pointer;
+  margin: 2rem 0.6rem;
+}
+
+.locale-social svg {
+  width: 34px;
+  height: 37px;
+}
+
+.locale-social svg path {
+  fill: var(--color-text-sub);
+}
 /* ================== FOOTER =====================*/
 
 /* ================== BREAKPOINTS =====================*/
