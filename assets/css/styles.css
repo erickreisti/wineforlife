@@ -268,7 +268,7 @@ button {
 .hero-social h3 {
   font-family: var(--family-title-font);
   font-size: var(--size-medium-font);
-  color: white;
+  color: #fff;
 }
 .hero-social img {
   width: 35px;
