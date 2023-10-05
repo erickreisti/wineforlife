@@ -621,6 +621,16 @@ button {
   fill: var(--color-text-sub);
 }
 /* ================== FOOTER =====================*/
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-container);
+  padding: 0.6rem 0 0.2rem 0;
+}
+
+.footer span {
+}
 
 /* ================== BREAKPOINTS =====================*/
 
