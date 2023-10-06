@@ -124,7 +124,7 @@ button {
 }
 
 .section {
-  padding: 7rem 0 2rem;
+  padding: 5rem 0 2rem;
 }
 
 .section-title,
@@ -189,18 +189,6 @@ button {
   font-size: var(--size-text-font);
 }
 
-@media screen and (max-width: 767px) {
-  .nav-menu {
-    position: fixed;
-    background-color: var(--color-container);
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100%;
-    transition: 0.3s;
-  }
-}
-
 .nav-menu__list {
   display: flex;
   flex-direction: column;
@@ -211,6 +199,7 @@ button {
 
 .nav-menu__link {
   text-transform: capitalize;
+  font-family: var(--family-title-font);
   color: var(--color-text-sub);
   font-size: var(--size-text-font);
   font-weight: var(--font-semibold);
@@ -226,17 +215,11 @@ button {
   cursor: pointer;
 }
 
-/* == MOBILE == */
-.show-menu {
-  right: 0;
-  animation: bolha 1s ease;
-}
-
 /* ================== HOME =====================*/
 .hero {
   position: relative;
   display: grid;
-  grid-template-rows: 300px 500px;
+  grid-template-rows: 50% 50%;
   gap: 0;
 }
 
@@ -250,7 +233,7 @@ button {
 }
 
 .hero-title {
-  font-size: var(--size-title-font);
+  font-size: var(--size-sub-font);
   font-family: var(--family-title-font);
 }
 
@@ -305,6 +288,8 @@ button {
 .about-container p {
   color: var(--color-text);
   font-size: var(--size-normal-font);
+  width: clamp(300px, 80%, 600px);
+  align-self: center;
 }
 
 .about-container button {
@@ -378,6 +363,17 @@ button {
   font-size: var(--size-text-font);
 }
 
+.catalog-preview__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.catalog-products {
+  max-width: 250px;
+  align-self: center;
+}
+
 .catalog-preview__title img {
   position: absolute;
   top: 0;
@@ -390,10 +386,15 @@ button {
   padding: 3rem 0;
   filter: drop-shadow(8px 5px 5px hsla(0, 4%, 19%, 0.425));
   transition: 0.9s ease-in-out;
+  align-self: center;
 }
 
 .catalog-preview__description img:hover {
   transform: scale(1.1);
+}
+
+.catalog-preview__info {
+  max-width: 500px;
 }
 
 .catalog-preview__info p {
@@ -410,6 +411,12 @@ button {
 .features {
   background-image: url('../images/background-marbled.jpg');
 }
+
+.features-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .features-available {
   display: flex;
   flex-direction: column;
@@ -418,6 +425,7 @@ button {
   row-gap: 2.5rem;
   border: 1px solid var(--color-text-sub);
   padding: 1rem 0.2rem;
+  max-width: 500px;
 }
 
 .features-title {
@@ -473,6 +481,7 @@ button {
 }
 .speciale-product {
   position: relative;
+  align-self: center;
 }
 .speciale-product img:nth-child(odd) {
   position: absolute;
@@ -556,8 +565,8 @@ button {
 }
 
 .blog-post__img {
-  width: 340px;
-  height: 240px;
+  width: max(500px, 340px);
+  height: 100%;
   border-radius: 5px;
   margin: 1rem 0;
 }
@@ -566,7 +575,6 @@ button {
   display: flex;
   justify-content: center;
   padding: 0.3rem 0.5rem;
-  width: 330px;
   height: 60px;
   border-radius: 115.5px;
   background: linear-gradient(
@@ -630,10 +638,67 @@ button {
 }
 
 .footer span {
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
 }
 
 /* ================== BREAKPOINTS =====================*/
 
+@media screen and (min-width: 576px) {
+  .hero-title {
+    font-size: var(--size-sizehero-font);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nav-menu {
+    position: fixed;
+    background-color: var(--color-body);
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+  }
+}
+
+/* == MOBILE == */
+.show-menu {
+  right: 0;
+}
+
+@media screen and (min-width: 767px) {
+  .section {
+    padding: 7rem 0 2rem;
+  }
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+  .toggle-bar,
+  .toggle-close {
+    display: none;
+  }
+  .nav-menu__list {
+    padding-top: 0;
+    flex-direction: row;
+    column-gap: 1.5rem;
+  }
+  .nav-menu__link {
+    position: relative;
+    font-size: var(--size-text-font);
+  }
+  .about-container button {
+    margin: 2rem 8rem 0 0;
+    text-align: right;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 /* ================== ANIMATIONS =====================*/
 @keyframes arrow {
   0% {
@@ -644,14 +709,5 @@ button {
   }
   100% {
     transform: translateY(0);
-  }
-}
-
-@keyframes bolha {
-  0% {
-    border-radius: 80% 0% 0% 80%;
-  }
-  100% {
-    border-radius: 0% 0% 0% 0%;
   }
 }
